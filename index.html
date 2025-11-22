@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ERP Implementation Progress Portal</title>
+<style>
+  body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+  }
+
+  /* Header with flashing star */
+  header {
+    background-color: #005a9c;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+  }
+
+  header h1 {
+    font-size: 18px;
+    margin-left: 40px; /* space for the star */
+  }
+
+  /* Flashing star */
+  .flash-star {
+    position: absolute;
+    left: 60px; /* distance from left of header */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-color: gold;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+    animation: flash 1.5s infinite;
+  }
+
+  @keyframes flash {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+  }
+
+  .marquee {
+    background-color: #e8f4ff;
+    color: #005a9c;
+    padding: 5px 10px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee span {
+    display: inline-block;
+    animation: scroll 20s linear infinite;
+  }
+
+  @keyframes scroll {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .stat-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 10px;
+    flex: 1 1 150px;
+    max-width: 180px;
+    text-align: center;
+  }
+
+  .stat-card h2 {
+    font-size: 14px;
+    color: #005a9c;
+    margin: 5px 0;
+  }
+
+  .stat-card .value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #008000;
+  }
+
+  .section {
+    margin: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 5px;
+    font-size: 12px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #e8f4ff;
+    color: #005a9c;
+  }
+
+  .progress-bar {
+    height: 12px;
+    border-radius: 6px;
+    background-color: #e0e0e0;
+    overflow: hidden;
+    text-align: right;
+  }
+
+  .progress {
+    height: 100%;
+    padding-right: 3px;
+    color: white;
+    font-size: 10px;
+    background-color: #4caf50;
+    border-radius: 6px 0 0 6px;
+  }
+
+  .remarks {
+    text-align: left;
+  }
+
+  /* Section header styling - centered and blue */
+  .section h2 {
+    color: #005a9c;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .stats { flex-direction: column; align-items: center; }
+    table { font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="flash-star"></div>
+  <h1>ERP Implementation Progress Portal</h1>
+</header>
+
+<div class="marquee">
+  <span>Implementation is On Track | SDM Sessions Completed | 2nd Phase User Training | Timelines for Go-Live</span>
+</div>
+
+<section class="stats">
+  <div class="stat-card"><h2>Master Data</h2><div class="value">75%</div></div>
+  <div class="stat-card"><h2>User Matrix</h2><div class="value">90%</div></div>
+  <div class="stat-card"><h2>Process Mapping</h2><div class="value">35%</div></div>
+  <div class="stat-card"><h2>Report Building</h2><div class="value">10%</div></div>
+  <div class="stat-card"><h2>Overall Implementation</h2><div class="value">25%</div></div>
+</section>
+
+<section class="section">
+  <h2>Entities Status</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Entity</th><th>Go-Live</th><th>Modules to Implement</th><th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Riyadh Villa Construction</td><td>01-Dec-25</td><td>Finance & Procurement</td><td><div class="progress-bar"><div class="progress" style="width:25%">25%</div></div></td></tr>
+      <tr><td>GITCO</td><td>30-Nov-25</td><td>Contracts & Subcontracts</td><td><div class="progress-bar"><div class="progress" style="width:15%">15%</div></div></td></tr>
+      <tr><td>MMIS</td><td>30-Nov-25</td><td>Plant & FAS</td><td><div class="progress-bar"><div class="progress" style="width:25%">25%</div></div></td></tr>
+      <tr><td>Conservo FM</td><td>30-Nov-25</td><td>CRM & HRMS</td><td><div class="progress-bar"><div class="progress" style="width:20%">20%</div></div></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section">
+  <h2>Major Milestones Progress</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Major Milestones</th>
+        <th>Completion Status</th>
+        <th>Action Plans / Remarks</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kick-Off Meeting</td>
+        <td><div class="progress-bar"><div class="progress" style="width:100%">100%</div></div></td>
+        <td>Departmental Process Mapping</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>SDM Core Master by Xpedeon</td>
+        <td><div class="progress-bar"><div class="progress" style="width:100%">100%</div></div></td>
+        <td>System Configuration</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>SDM Sessions (Procurement, Contracts/Subcontracts, Budget, Finance, HR)</td>
+        <td><div class="progress-bar"><div class="progress" style="width:100%">100%</div></div></td>
+        <td>User Access Matrix</td>
+        <td>Ongoing</td>
+      </tr>
+      <tr>
+        <td>Master Data Updates - Submittal to Consultants</td>
+        <td><div class="progress-bar"><div class="progress" style="width:90%">90%</div></div></td>
+        <td>Delay in HR Data</td>
+        <td>Improving</td>
+      </tr>
+      <tr>
+        <td>Process Development & Mapping - Internal by RVCC PM team</td>
+        <td><div class="progress-bar"><div class="progress" style="width:25%">25%</div></div></td>
+        <td>Opening Balance Preparations</td>
+        <td>Preparations</td>
+      </tr>
+      <tr>
+        <td>User Training & Hands-on Practice - Consultants</td>
+        <td><div class="progress-bar"><div class="progress" style="width:35%">35%</div></div></td>
+        <td>Facility Management</td>
+        <td>Planned</td>
+      </tr>
+      <tr>
+        <td>Reports Understanding & Requirements - Reposting Matrix & Formatting request</td>
+        <td><div class="progress-bar"><div class="progress" style="width:15%">15%</div></div></td>
+        <td>GITCO - GoLive</td>
+        <td>Planned</td>
+      </tr>
+      <tr>
+        <td>UAT - Testing & Acceptance - Sign-Off</td>
+        <td><div class="progress-bar"><div class="progress" style="width:1%">1%</div></div></td>
+        <td>MMIS - Master Data</td>
+        <td>Ongoing</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>
